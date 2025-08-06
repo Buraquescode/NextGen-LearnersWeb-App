@@ -1,0 +1,232 @@
+/* RESET & BASE */
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  color: black;
+  background: #1A1A2E;
+  overflow-x: hidden;
+}
+a { text-decoration: none; }
+
+/* VARIABLES */
+:root {
+  --dark: #0D0D2B;
+  --semi-dark: #1A1A2E;
+  --primary-light: rgba(0, 248, 33, 0.74);
+  --primary-dark: rgba(116, 206, 128, 0.74);;
+  --text-light: #E5E5E5;
+  --text-dark: #AAA;
+}
+
+
+
+/* CONTAINERS */
+.container {
+  width: 90%; max-width: 1200px;
+  margin: 0 auto;
+}
+.nav-container, .hero-content {
+    margin-top: 10px;
+  display: flex; align-items: center;
+  justify-content: space-between;
+}
+
+.hero-content{
+    margin-top: 20px;
+}
+
+/* NAVBAR */
+.navbar {
+  margin-left: 50px;
+  margin-top: 10px; 
+  width:  90%; position: fixed; top: 0;
+  background: rgba(3, 29, 6, 0.74); z-index: 1000;
+  padding: 10px ;
+  border-radius: 50px;
+  gap: 20px;
+}
+.logo {
+  font-weight: 700; font-size: 26px;
+  color: var(--primary-light);
+}
+.nav-links {
+  list-style: none; display: flex; gap: 2rem;
+  justify-content:space-between ;
+  font-size: 18px;
+  margin-right: 140px;
+}
+.nav-links a {
+  color: var(--text-light); font-weight: 500;
+}
+.nav-links a:hover { color: var(--primary-light); }
+.nav-cta .btn { margin-left: 1rem; }
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+.btn-primary {
+  background: linear-gradient(90deg, var(--primary-light), var(--primary-dark));
+  color: #FFF; border: none;
+}
+.btn-primary:hover {
+  opacity: 0.9;
+}
+.btn-outline {
+  background: transparent;
+  color: var(--text-light);
+  border: 1px solid var(--text-light);
+}
+.btn-outline:hover {
+  background: var(--text-light);
+  color: var(--dark);
+}
+
+/* HAMBURGER (MOBILE) */
+.hamburger {
+  display: none; cursor: pointer;
+  font-size: 1.25rem;
+  color: var(--text-light);
+}
+
+/* MOBILE SIDEBAR */
+.mobile-menu {
+  position: fixed; left: -100%; top: 0;
+  width: 75%; height: 100vh;
+  background: var(--dark);
+  padding: 2rem;
+  transition: 0.3s;
+  z-index: 1100;
+}
+.mobile-menu.active { left: 0; }
+.mobile-menu .close-btn {
+  text-align: right; font-size: 1.25rem;
+  color: var(--text-light); cursor: pointer;
+}
+.mobile-menu ul {
+  list-style: none; margin-top: 2rem;
+}
+.mobile-menu li {
+  margin-bottom: 1.5rem;
+}
+.mobile-menu a {
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+.mobile-menu .btn { margin: 0; }
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding-top: 80px; /* offset for fixed nav */
+  background: var(--semi-dark) center/cover no-repeat;
+  transition: background 1s ease-in-out;
+}
+.hero-content {
+  width: 100%; display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #000000;
+}
+.hero-text {
+  max-width: 550px;
+}
+.hero-text h1 {
+  font-size: 3rem; line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.hero-text p {
+  color: black;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+.hero-buttons {
+  display: flex; align-items: center;
+  gap: 1rem; margin-bottom: 2rem;
+
+}
+.learn-more {
+  background: linear-gradient(90deg, var(--primary-light), var(--primary-dark));
+  color: #FFF; border: none;
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+.learn-more i { margin-left: 0.5rem; }
+
+/* FEATURES SLIDER CARDS */
+.features-slider {
+  display: flex; gap: 1.5rem;
+}
+.feature-card {
+  background: rgba(126, 247, 142, 0.74);
+  padding: 1.5rem;
+  border-radius: 8px;
+  flex: 1;
+  backdrop-filter: blur(4px);
+}
+.feature-card .step {
+  width: 28px; height: 28px;
+  border: 1px solid black;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 28px;
+  margin-bottom: 0.75rem;
+  color: black;
+}
+.feature-card h4 {
+  margin-bottom: 0.5rem; font-weight: 600;
+  color: black;
+}
+.feature-card p {
+  font-size: 0. nine rem; color: black;
+}
+
+/* HERO IMAGE & SOCIAL */
+.hero-image {
+  position: relative;
+  max-width: 45%;
+}
+.hero-image img {
+  width: 100%;
+  display: block;
+}
+.social-icons {
+  position: absolute;
+  top: 22px;
+  right: 150px;
+  display: flex;
+  gap: 0.75rem;
+
+}
+.social-icons a {
+  background: var(--semi-dark);
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #FFF; font-size: 1rem;
+  transition: 0.3s;
+}
+.social-icons a:hover {
+  background: var(--primary-light);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .hero-content { flex-direction: column-reverse; text-align: center; }
+  .hero-image { margin-bottom: 2rem; max-width: 70%; }
+  .features-slider { flex-direction: column; }
+}
+@media (max-width: 768px) {
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: block; }
+}

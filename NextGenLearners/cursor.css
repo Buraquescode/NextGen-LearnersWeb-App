@@ -1,0 +1,43 @@
+/* 1) Hide the default arrow */
+body {
+  cursor: none;
+}
+
+/* 2) The “head” of the cursor */
+.cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 16px; height: 16px;
+  background: rgba(0, 240, 52, 0.9);
+  border: 2px solid #c9c7fc;     /* adjust to your highlight color */
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
+  z-index: 9999;
+}
+
+/* 3) When hovering links/buttons, the cursor “grows” */
+.cursor.hover {
+  width: 32px; height: 32px;
+  background: rgba(255,255,255,0.3);
+}
+
+/* 4) The little fading trail circles */
+.cursor-trail {
+  position: fixed;
+  width: 15px; height: 15px;
+  background: rgba(28, 92, 53, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  will-change: transform, opacity;
+  animation: trail-fade 0.6s forwards;
+}
+
+@keyframes trail-fade {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2);
+  }
+}
